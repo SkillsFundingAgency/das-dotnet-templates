@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Api", "SFA.DAS.WebTemplateSourceName.Api\SFA.DAS.WebTemplateSourceName.Api.csproj", "{B596FC9B-0E6D-4CCE-A88B-A287CEAD38D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Infrastructure", "SFA.DAS.WebTemplateSourceName.Infrastructure\SFA.DAS.WebTemplateSourceName.Infrastructure.csproj", "{C5390FEB-E320-43A4-80DC-4A3F29871A97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Application", "SFA.DAS.WebTemplateSourceName.Application\SFA.DAS.WebTemplateSourceName.Application.csproj", "{0810AB5A-30FA-47E3-A4C2-9570C93F872B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SFA.DAS.WebTemplateSourceName.Database", "SFA.DAS.WebTemplateSourceName.Database\SFA.DAS.WebTemplateSourceName.Database.sqlproj", "{2B8EF05B-4833-4558-940A-6335170CED47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Api.UnitTests", "SFA.DAS.WebTemplateSourceName.Api.UnitTests\SFA.DAS.WebTemplateSourceName.Api.UnitTests.csproj", "{335AA616-0AC7-495E-A387-390AC363DC44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Infrastructure.UnitTests", "SFA.DAS.WebTemplateSourceName.Infrastructure.UnitTests\SFA.DAS.WebTemplateSourceName.Infrastructure.UnitTests.csproj", "{CDEA1B7B-BDC8-4648-834E-B9C93274C7BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Messages", "SFA.DAS.WebTemplateSourceName.Messages\SFA.DAS.WebTemplateSourceName.Messages.csproj", "{BF1851FE-1D49-4E27-A7C1-75E40A36B21B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.WebTemplateSourceName.Domain", "SFA.DAS.WebTemplateSourceName.Domain\SFA.DAS.WebTemplateSourceName.Domain.csproj", "{9010A399-3FB7-4F86-BAC0-B8ACDCC25A0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B596FC9B-0E6D-4CCE-A88B-A287CEAD38D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B596FC9B-0E6D-4CCE-A88B-A287CEAD38D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B596FC9B-0E6D-4CCE-A88B-A287CEAD38D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B596FC9B-0E6D-4CCE-A88B-A287CEAD38D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5390FEB-E320-43A4-80DC-4A3F29871A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5390FEB-E320-43A4-80DC-4A3F29871A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5390FEB-E320-43A4-80DC-4A3F29871A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5390FEB-E320-43A4-80DC-4A3F29871A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0810AB5A-30FA-47E3-A4C2-9570C93F872B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0810AB5A-30FA-47E3-A4C2-9570C93F872B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0810AB5A-30FA-47E3-A4C2-9570C93F872B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0810AB5A-30FA-47E3-A4C2-9570C93F872B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8EF05B-4833-4558-940A-6335170CED47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8EF05B-4833-4558-940A-6335170CED47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8EF05B-4833-4558-940A-6335170CED47}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2B8EF05B-4833-4558-940A-6335170CED47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8EF05B-4833-4558-940A-6335170CED47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8EF05B-4833-4558-940A-6335170CED47}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{335AA616-0AC7-495E-A387-390AC363DC44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335AA616-0AC7-495E-A387-390AC363DC44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335AA616-0AC7-495E-A387-390AC363DC44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335AA616-0AC7-495E-A387-390AC363DC44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEA1B7B-BDC8-4648-834E-B9C93274C7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEA1B7B-BDC8-4648-834E-B9C93274C7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEA1B7B-BDC8-4648-834E-B9C93274C7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEA1B7B-BDC8-4648-834E-B9C93274C7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1851FE-1D49-4E27-A7C1-75E40A36B21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1851FE-1D49-4E27-A7C1-75E40A36B21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1851FE-1D49-4E27-A7C1-75E40A36B21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1851FE-1D49-4E27-A7C1-75E40A36B21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9010A399-3FB7-4F86-BAC0-B8ACDCC25A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9010A399-3FB7-4F86-BAC0-B8ACDCC25A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9010A399-3FB7-4F86-BAC0-B8ACDCC25A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9010A399-3FB7-4F86-BAC0-B8ACDCC25A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection	
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1426677-A65D-422F-A21B-3CFBD3A0E56D}
+	EndGlobalSection
+EndGlobal

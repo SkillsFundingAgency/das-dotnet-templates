@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+ <ItemGroup>
+    <ProjectReference Include="..\SFA.DAS.WebTemplateSourceName.Domain\SFA.DAS.WebTemplateSourceName.Domain.csproj" />
+    <ProjectReference Include="..\SFA.DAS.WebTemplateSourceName.Infrastructure\SFA.DAS.WebTemplateSourceName.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
