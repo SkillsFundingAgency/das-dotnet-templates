@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SFA.DAS.Authorization.Context;
-using SFA.DAS.LevyTransferMatching.Infrastructure.Services.AccountUsersReadStore;
-using SFA.DAS.LevyTransferMatching.Infrastructure.Services.CosmosDb;
+using SFA.DAS.WebTemplateSourceName.Infrastructure.Services.AccountUsersReadStore;
+using SFA.DAS.WebTemplateSourceName.Infrastructure.Services.CosmosDb;
 using SFA.DAS.WebTemplateSourceName.Web.Authentication;
 using SFA.DAS.WebTemplateSourceName.Web.Authorization;
 using System;
