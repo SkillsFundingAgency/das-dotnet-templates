@@ -1,165 +1,110 @@
-## ⛔Never push sensitive information such as client id's, secrets or keys into repositories including in the README file⛔
-
-# _Project Name_
+# dotnet Cli Templates
 
 <img src="https://avatars.githubusercontent.com/u/9841374?s=200&v=4" align="right" alt="UK Government logo">
 
-_Update these badges with the correct information for this project. These give the status of the project at a glance and also sign-post developers to the appropriate resources they will need to get up and running_
-
 [![Build Status](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_apis/build/status/_projectname_?branchName=master)](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_build/latest?definitionId=_projectid_&branchName=master)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=_projectId_&metric=alert_status)](https://sonarcloud.io/dashboard?id=_projectId_)
 [![Jira Project](https://img.shields.io/badge/Jira-Project-blue)](https://skillsfundingagency.atlassian.net/secure/RapidBoard.jspa?rapidView=564&projectKey=_projectKey_)
 [![Confluence Project](https://img.shields.io/badge/Confluence-Project-blue)](https://skillsfundingagency.atlassian.net/wiki/spaces/_pageurl_)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
-_Add a description of the project and the high-level features that it provides. This should give new developers an understanding of the background of the project and the reason for its existence._
+This repository holds the `dotnet cli` templates for creating new DAS websites, API's and Azure Functions. The templates make the process of creation of standard DAS applications easier and more straight forward by including and configuring many of the common packages and patterns without the developer having to do so manually.
 
-_For Example_
-
-```
-The ServiceBus Support Utility is an Azure ServiceBus Queue management tool that allows you to manage messages that have moved to error queues without having to resort to managing each message individually.
-
-1. Utilises Azure Active Directory for Authentication
-2. Automatically enumerates error queues within the Azure Service Bus namespace
-3. Messages can be retrieved per queue
-4. Retrieved messages can be:
-    - Aborted - all retrieved messages will be placed back on the queue they were received from
-    - Replayed - messages will be moved back onto the original processing queue so that they can be processed again
-    - Deleted - messages will be removed and will be no longer available for processing
-```
+Each template should be a good starting point for most new solutions of their type and help you get up and running as quickly as possible but should be amended as is required.
 
 ## How It Works
 
-_Add a description of how the project works technically, this should give new developers an insight into the how the project hangs together, the core concepts in-use and the high-level features that it provides_
+The templates have been configured to use the current LTS versions of .Net Core and to include a lot of the common packages and patterns that we use within most of our new applications.
 
-_For Example_
-```
-The ServiceBus Utility is a combination of website and background processor that enumerates Azure Service Bus queues within a namespace using the error queue naming convention and presents them to the user as a selectable list, allowing messages on a queue to be retrieved for investigation. Once a queue has been selected the website will retrieve the messages from the error queue and place them into a CosmosDB under the exclusive possession of the logged in user. Once the messages have been moved into the CosmosDB the background processor will ensure that those messages are held for a maximum sliding time period of 24 hours. If messages are still present after this period expires the background processer will move them back to the error queue automatically so that they aren't held indefinitely.
+All of the templates have multiple projects configured in the [Onion Architecture](https://skillsfundingagency.github.io/das-technical-guidance/development_standards/solution-structure#solution-architecture) layout, an example would look like this but there may be more or less depending on the type of project being created:
 
-Depending on the action performed by the user the messages will follow one of three paths. In the event that the user Aborts the process, the messages are moved back to the error queue they came from, if the user replays the messages they will be placed back onto the "processing queue" they were on prior to ending up in the error queue and will be removed from the CosmosDB. If the user deletes the messages then they will be removed from the CosmosDB and will be gone forever.
-```
+* SFA.DAS.xxx.Web
+* SFA.DAS.xxx.Web.UnitTests
+* SFA.DAS.xxx.Application
+* SFA.DAS.xxx.Domain
+* SFA.DAS.xxx.Infrastructure
+* SFA.DAS.xxx.Infrastructure.UnitTests
 
-## 🚀 Installation
+### das-web Template
 
-### Pre-Requisites
+das-web is currently templated as if it were being configured as a subsite of EAS. It contains the JavaScript and CSS from das-frntend and two example pages. An unsecured `Home` page and a `Secure` page secured using `DasAuthorization`.
 
-_Add the pre-requisites needed to successfully run the project so that new developers know how they are to setup their development environment_
+For the secured page to operate correctly you will need to create the required CosmosDB instance which consists of a database called `SFA.DAS.EmployerAccounts.ReadStore.Database`  containing a collection called `AccountUsers`. Within the collection you will need at least one entry for your user that looks like the example below but with your own userRef and the accountId for the employer you wish to use:
 
-_For Example_
-```
-* A clone of this repository
-* A code editor that supports Azure functions and .NetCore 3.1
-* A CosmosDB instance or emulator
-* An Azure Service Bus instance
-* An Azure Active Directory account with the appropriate roles as per the [config](https://github.com/SkillsFundingAgency/das-employer-config/blob/master/das-tools-servicebus-support/SFA.DAS.Tools.Servicebus.Support.json)
-* The [das-audit](https://github.com/SkillsFundingAgency/das-audit) API available either running locally or accessible in an Azure tenancy    
-```
-### Config
+> The userRef is the Guid of the user taken from the [EmployerUsers](https://github.com/SkillsFundingAgency/das-employerusers) database in the AT environment.
 
-_Add details of the configuration required to successfully run the project. Adding in the config structure from the das-employer-config repo will help new developers understand what the config looks like and detailing the row keys and partition keys of any config rows will make it obvious where the config needs to be for the project to find it. Adding any further config which does not live in das-employer-config will also assist new developers to get the project running._
-
-> _If you do add config directly to the README you will be required to keep it up-to-date with any changes made to it in the [das-employer-config repository](https://github.com/SkillsFundingAgency/das-employer-config), for this reason it is suggested that you also provide links to the config in that respoitory so that the latest changes are always available_
-
-_For Example_
-```
-This utility uses the standard Apprenticeship Service configuration. All configuration can be found in the [das-employer-config repository](https://github.com/SkillsFundingAgency/das-employer-config).
-
-* A connection string for either the Apprenticeship Services ASB namespace or a namespace you own for development
-* A CosmosDB connection string for either the Apprenticeship Service instance CosmosDB or a CosmosDB you own for development (you can use the emulator)
-* Configure the [das-audit](https://github.com/SkillsFundingAgency/das-audit) project as per [das-employer-config](https://github.com/SkillsFundingAgency/das-employer-config/blob/master/das-audit/SFA.DAS.AuditApiClient.json)
-* Add an appsettings.Development.json file
-    * Add your connection strings for CosmosDB and ASB to the relevant sections of the file
-* The CosmosDB will be created automatically if it does not already exist and the credentials you are connected with have the appropriate rights within the Azure tenant otherwise it will need to be created manually using the details in the config below under `CosmosDbSettings`.
-```
-AppSettings.Development.json file
 ```json
 {
-    "Logging": {
-      "LogLevel": {
-        "Default": "Information",
-        "Microsoft": "Warning",
-        "Microsoft.Hosting.Lifetime": "Information"
-      }
+    "userRef": "<your user ref>",
+    "accountId": 1,
+    "role": 1,
+    "outboxData": [
+        {
+            "messageId": "d08e03ec-e72b-4a0c-ab7b-64a57d8fcdc6",
+            "created": "2021-04-07T13:14:11.106231Z"
+        }
+    ],
+    "Created": "2021-04-07T13:14:11.106231Z",
+    "updated": null,
+    "removed": null,
+    "id": "60907f76-f212-4a2d-b7bd-9a015c3d1bb9",
+    "metadata": {
+        "schemaType": "accountUser",
+        "schemaVersion": 1
     },
-    "ConfigurationStorageConnectionString": "UseDevelopmentStorage=true;",
-    "ConfigNames": "SFA.DAS.Tools.Servicebus.Support,SFA.DAS.AuditApiClient",
-    "EnvironmentName": "LOCAL",
-    "Version": "1.0",
-    "APPINSIGHTS_INSTRUMENTATIONKEY": ""
-  }  
-```
-
-Azure Table Storage config
-
-Row Key: SFA.DAS.Tools.Servicebus.Support_1.0
-
-Partition Key: LOCAL
-
-Data:
-
-```json
-{
-  "BaseUrl": "localhost:5001",
-  "UserIdentitySettings":{
-    "RequiredRole": "Servicebus Admin", 
-    "UserSessionExpiryHours": 24,
-    "UserRefreshSessionIntervalMinutes": 5,
-    "NameClaim": "name"
-  },
-  "ServiceBusSettings":{
-    "ServiceBusConnectionString": "",
-    "QueueSelectionRegex": "[-,_]+error",
-    "PeekMessageBatchSize": 10,
-    "MaxRetrievalSize": 250,
-    "ErrorQueueRegex": "[-,_]error[s]*$",
-    "RedactPatterns": [
-      "(.*SharedAccessKey=)([\\s\\S]+=)(.*)"
-    ]
-  },
-  "CosmosDbSettings":{
-    "Url": "",
-    "AuthKey": "",
-    "DatabaseName": "QueueExplorer",
-    "CollectionName": "Session",
-    "Throughput": 400,
-    "DefaultCosmosOperationTimeout": 55,
-    "DefaultCosmosInterimRequestTimeout": 2
-  }
+    "_rid": "hnZXALDVXNUBAAAAAAAAAA==",
+    "_self": "dbs/hnZXAA==/colls/hnZXALDVXNU=/docs/hnZXALDVXNUBAAAAAAAAAA==/",
+    "_etag": "\"00000000-0000-0000-6444-f80ac33301d7\"",
+    "_attachments": "attachments/",
+    "_ts": 1624022541
 }
 ```
 
-## 🔗 External Dependencies
+It currently contains the following packages:
 
-_Add details of any external dependencies that are required for the project to run, this could be details of authentication providers, API's or stubs/test harnesses._
+|Internal |External  |
+--- | --- 
+|DAS Authorization|Fluent Validation|
+|DAS Shared UI|App Insights|
+|DAS Employer URL Helper|REDIS HealthCheck|
+|DAS Encoding|Data protection|
+|DAS HTTP|NLog|
+|DAS REDIS NLog|Azure Table Storage|
+|DAS Validation|NUnit|
+|DAS NServiceBus|Moq|
+||Autofixture|
 
-_For Example_
-```
-* This utility uses the [das-audit](https://github.com/SkillsFundingAgency/das-audit) Api to log changes
-```
+### das-api Template
 
-## Technologies
+The Api template is configured with the following packages:
 
-_List the key technologies in-use in the project. This will give an indication as to the skill set required to understand and contribute to the project_
+|Internal |External  |
+--- | --- 
+|DAS Authorization|Fluent Validation|
+|DAS REDIS NLog|Mediatr|
+|DAS Unit of Work|REDIS HealthCheck|
+|DAS NServiceBus|Data protection|
+||NLog|
+||Swashbuckle|
+||App Insights|
+||Azure Table Storage|
+||NUnit|
+||Moq|
+||Autofixture|
+||FluentAssertions|
 
-_For Example_
-```
-* .NetCore 3.1
-* Azure Functions V3
-* CosmosDB
-* REDIS
-* NLog
-* Azure Table Storage
-* NUnit
-* Moq
-* FluentAssertions
-```
+## 🚀 Installation
+
+You can either clone this repository and use the combination of `dotnet pack` & `dotnet new -i <PATH_TO_NUGET>` commands from the `working` directory or 
+install the templates from the nuget package hosted on nuget.org using `dotnet new -i <NUGET_ID>`
+
+Once the templates are installed they can be used with the following commands `dotnet new -i <das-web|das-api>`.
+
+## Contributing
+
+Projects created from the templates should compile and run straight away. If you find any issues or want to add anything to the template please create a PR after first ensuring that any changes you make leave the templates making projects that compile and run.
+
+Please also remember to update this README file with the relevant information for any changes made.
 
 ## 🐛 Known Issues
 
-_Add any known issues with the project_
-
-_For Example_
-
-```
-* Fails when built under VS2019
-```
+There are no known issues

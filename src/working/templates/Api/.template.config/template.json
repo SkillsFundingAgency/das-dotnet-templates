@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Dan Beavon",
+    "classifications": [ "Api", "DAS" ],
+    "identity": "SFA.DAS.ApiTemplate.CSharp",
+    "name": "ESFA Digital Apprenticeship Service Api Template",
+    "shortName": "das-api",
+    "sourceName": "WebTemplateSourceName",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "guids": [
+        "{41F47D3C-C9E4-45D1-A289-3BDC31E44C19}",
+        "{980FBE34-066B-4E87-AFC9-C3205844D980}",
+        "{FD448FB5-B24B-4CD2-8E3C-2500CF0E4601}",
+        "{D8FC665A-7739-4ADE-85E9-C69AA107EEE6}",
+        "{92D25D7D-F637-4634-B939-BB38DE53B606}",
+        "{5D52EDF7-47B8-48D2-83B6-104B18568CE4}",
+        "{92D25D7D-F637-4634-B939-BB38DE53B590}",
+        "{5D52EDF7-47B8-48D2-83B6-104B18568CE7}"
+    ],
+    "primaryOutputs": [{
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Domain\\SFA.DAS.WebTemplateSourceName.Domain.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Infrastructure\\SFA.DAS.WebTemplateSourceName.Infrastructure.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Infrastructure\\SFA.DAS.WebTemplateSourceName.Infrastructure.UnitTests.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Api\\SFA.DAS.WebTemplateSourceName.Api.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Api.UnitTests\\SFA.DAS.WebTemplateSourceName.Api.UnitTests.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Application\\SFA.DAS.WebTemplateSourceName.Application.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Database\\SFA.DAS.WebTemplateSourceName.Database.csproj"
+        },
+        {
+            "path": "src\\SFA.DAS.WebTemplateSourceName.Messages\\SFA.DAS.WebTemplateSourceName.Messages.csproj"
+        }
+    ]
+}
