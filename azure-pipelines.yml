@@ -12,11 +12,6 @@ variables:
 - name: BuildPlatform
   value: any cpu
 
-pool:
-  name: DAS - Continuous Integration
-  workspace:
-    clean: all
-
 resources:
   repositories:
   - repository: self
@@ -33,6 +28,6 @@ stages:
     parameters:
       SolutionBaseName: $(SolutionBaseName)
       BuildConfiguration: $(BuildConfiguration)
-      
+
 - template: azure-pipelines-templates/deploy/stage/nuget-publish.yml@das-platform-building-blocks
     
