@@ -4,19 +4,6 @@ trigger:
     include:
       - "*"
 
-variables:
-- name: SolutionBaseName
-  value: __SolutionBaseName__
-- name: BuildConfiguration
-  value: release
-- name: BuildPlatform
-  value: any cpu
-
-pool:
-  name: DAS - Continuous Integration
-  workspace:
-    clean: all
-
 resources:
   repositories:
   - repository: self
@@ -30,7 +17,6 @@ stages:
 - stage: Build
   jobs:
   - template: pipeline-templates/job/code-build.yml
-    parameters:
-      SolutionBaseName: $(SolutionBaseName)
-      BuildConfiguration: $(BuildConfiguration)
+
+- template: azure-pipelines-templates/deploy/stage/nuget-publish.yml@das-platform-building-blocks
     
