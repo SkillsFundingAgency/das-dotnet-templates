@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>1.0</PackageVersion>
-    <PackageId>SFA.DAS.Utility.Templates</PackageId>
+    <PackageId>SFA.DAS.DotNet.Templates</PackageId>
     <Title>SFA .Net cli Templates</Title>
     <Authors>Dan Beavon</Authors>
     <Description>Apprenticeship Service .Net cli templates.</Description>
