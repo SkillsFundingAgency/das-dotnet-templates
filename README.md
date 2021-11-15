@@ -1,4 +1,4 @@
-# dotnet Cli Templates
+# .Net Cli Templates
 
 <img src="https://avatars.githubusercontent.com/u/9841374?s=200&v=4" align="right" alt="UK Government logo">
 
@@ -61,7 +61,7 @@ For the secured page to operate correctly you will need to create the required C
 
 It currently contains the following packages:
 
-|Internal |External  |
+|Internal |External|
 --- | --- 
 |DAS Authorization|Fluent Validation|
 |DAS Shared UI|App Insights|
@@ -77,7 +77,7 @@ It currently contains the following packages:
 
 The Api template is configured with the following packages:
 
-|Internal |External  |
+|Internal |External|
 --- | --- 
 |DAS Authorization|Fluent Validation|
 |DAS REDIS NLog|Mediatr|
@@ -91,6 +91,21 @@ The Api template is configured with the following packages:
 ||Moq|
 ||Autofixture|
 ||FluentAssertions|
+
+### das-func Template
+
+das-func is currently configured with the following packages and is configured with an NServiceBus trigger function as an example and with the RestEase library for calling API's
+
+|Internal |External|
+--- | --- 
+|DAS HTTP|NLog|
+|DAS REDIS NLog|Azure Table Storage|
+|DAS Validation|NUnit|
+|DAS NServiceBus|Moq|
+|DAS Configuration|Autofixture|
+||RestEase|
+||Data protection|
+||App Insights|
 
 ## 🚀 Installation
 
