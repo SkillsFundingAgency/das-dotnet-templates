@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Dan Beavon",
-    "classifications": [ "Api", "DAS" ],
+    "classifications": [ "DAS", "Api" ],
     "identity": "SFA.DAS.ApiTemplate.CSharp",
     "name": "ESFA Digital Apprenticeship Service Api Template",
     "shortName": "das-api",

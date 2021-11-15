@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Dan Beavon",
-    "classifications": [ "Web", "MVC", "DAS" ],
+    "classifications": [ "DAS", "Web", "MVC" ],
     "identity": "SFA.DAS.WebTemplate.CSharp",
     "name": "ESFA Digital Apprenticeship Service Web Template",
     "shortName": "das-web",
