@@ -53,7 +53,7 @@ namespace SFA.DAS.WebTemplateSourceName.Web.StartupExtensions
                 {
                     options.AccessDeniedPath = new PathString("/error/403");
                     options.ExpireTimeSpan = TimeSpan.FromHours(1);
-                    options.Cookie.Name = "SFA.DAS.LevyTransferMatching.Web.Auth";
+                    options.Cookie.Name = "SFA.DAS.WebTemplateSourceName.Web.Auth";
                     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
                     options.SlidingExpiration = true;
                     options.Cookie.SameSite = SameSiteMode.None;
